@@ -1,0 +1,26 @@
+<div class="container">
+
+        <form  >
+            <div class="form-group">
+                <label for="exampleInputEmail1">nom</label>
+                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.nom" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Prenom</label>
+                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.prenom" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telephone</label>
+                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.telephone" [ngModelOptions]="{standalone: true}">
+            </div>
+           
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control"placeholder="Password" required [(ngModel)]="sellerAux.password" [ngModelOptions]="{standalone: true}">
+            </div>
+    
+            <button type="submit" class="btn btn-primary" (click)="editUserFunction()" >Submit</button>
+        </form>
+    
+    
+    </div>

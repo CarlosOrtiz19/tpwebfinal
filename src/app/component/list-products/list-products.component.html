@@ -1,0 +1,19 @@
+
+
+        <div class="container rounded border border-light" *ngFor="let item of listProduits">
+                <div class="row m-2" >
+                    <div class="col-4">
+                        <img src="./assets/image-not-found.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.nom}}</h5>
+                            <p class="card-text">{{item.description}}</p>
+                            <p class="card-text">{{item.prix}} $CAD</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+

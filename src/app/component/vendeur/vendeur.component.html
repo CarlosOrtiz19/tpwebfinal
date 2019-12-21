@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listeUsers">
+                <th scope="row">{{item.id}}</th>
+
+                <td>{{item.nom}}</td>
+                <td>{{item.prenom}}</td>
+                <td>{{item.email}}</td>
+                <button type="button" class="btn btn-info mr-3" [routerLink]="['/edit',item.id]">edit</button>
+                <button type="button" class="btn btn-info" (click)="deleteUser(item)">delete</button>
+                
+            </tr>
+        </tbody>
+    </table>
+
+</div>
