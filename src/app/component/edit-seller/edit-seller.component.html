@@ -1,26 +1,115 @@
-<div class="container">
 
-        <form  >
-            <div class="form-group">
-                <label for="exampleInputEmail1">nom</label>
-                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.nom" [ngModelOptions]="{standalone: true}">
+
+
+
+
+
+<div class="container-fluid p-3 my-10">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    Editer mon perfil
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">nom</label>
+                            <input type="text" class="form-control" required [(ngModel)]="sellerAux.nom"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Prenom</label>
+                            <input type="text" class="form-control" required [(ngModel)]="sellerAux.prenom"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Telephone</label>
+                            <input type="text" class="form-control" required [(ngModel)]="sellerAux.telephone"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" placeholder="Password" required
+                                [(ngModel)]="sellerAux.password" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="editUserFunction()">Envoyer</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Prenom</label>
-                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.prenom" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    inserer un nouveau produit
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <form [formGroup]="newProduct" (ngSubmit)="creerProduit()">
+                            <div class="form-group">
+                                <label>nom</label>
+                                <input type="texte" class="form-control" placeholder="nom" required
+                                    formControlName="nom">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="texte" class="form-control" placeholder="description" required
+                                    formControlName="description">
+                            </div>
+                            <div class="form-group">
+                                <label>Prix</label>
+                                <input type="number" class="form-control" placeholder="prix" required
+                                    formControlName="prix">
+                            </div>
+                            <button type="submit" class="btn btn-primary" [disabled]="!newProduct.valid">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Telephone</label>
-                <input type="text" class="form-control"  required [(ngModel)]="sellerAux.telephone" [ngModelOptions]="{standalone: true}">
-            </div>
-           
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control"placeholder="Password" required [(ngModel)]="sellerAux.password" [ngModelOptions]="{standalone: true}">
-            </div>
-    
-            <button type="submit" class="btn btn-primary" (click)="editUserFunction()" >Submit</button>
-        </form>
-    
-    
+        </div>
     </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div *ngIf="produitsVendeur" class="col-lg-10 align-self-start">
+            <h4>Produits</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Descripion</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Vendeur</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Vendu</th>
+                        
+    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of produitsVendeur">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.nom}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.prix}}</td>
+                        <td>{{item.vendeur}}</td>
+                        <td>{{item.active}}</td>
+                        <td>{{item.vendu}}</td>
+                        <button type="button" class="btn btn-info mr-3" (click)="deleteProduit(item)">Effacer</button>
+                        <button type="button" class="btn btn-info mr-3"
+                        (click)="cacherProduit(item.id)">Masquer/Afficher</button>
+    
+                    </tr>
+    
+                </tbody>
+            </table>
+            
+        </div>
+    
+     </div>
+</div>
+
+<div>
+    <button  class="btn btn-primary" (click)="eliminerVendeur()">eliminer compte</button>
+</div>

@@ -16,12 +16,21 @@ export class ProductService {
   getListProduct(){ 
     return this.http.get('/server/produits');
   }
+
   getListProductByid(id : number){ 
     return this.http.get('/server/produits/'+id);
   }
 
-  deleteProduct (id){
+  getListProductByVendeur(id : number){ 
+    return this.http.get('/server/produits/vendeur/'+id);
+  }
+
+  deleteProduit (id){
     return this.http.delete('/server/produits/'+id);
+  }
+
+  deleteParVendeurId (id){
+    return this.http.delete('/server/produits/effacerDeVendeur/'+id);
   }
 
   //POST = creation
@@ -35,6 +44,11 @@ export class ProductService {
   updateProduct(id,data){
     let body = JSON.stringify(data);
     return this.http.put('/server/produits/edit/'+ id, data,httpOptions);
+  }
+
+   //PUT
+   updateEtat(id:number){
+    return this.http.post('/server/produits/edit/'+ id,httpOptions);
   }
 
 }

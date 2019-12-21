@@ -1,6 +1,7 @@
 
 
         <div class="container rounded border border-light" *ngFor="let item of listProduits">
+            <div *ngIf="item.active">
                 <div class="row m-2" >
                     <div class="col-4">
                         <img src="./assets/image-not-found.jpg" class="card-img-top" alt="...">
@@ -10,10 +11,13 @@
                             <h5 class="card-title">{{item.nom}}</h5>
                             <p class="card-text">{{item.description}}</p>
                             <p class="card-text">{{item.prix}} $CAD</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">acheter</a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+              
             </div>
 
 

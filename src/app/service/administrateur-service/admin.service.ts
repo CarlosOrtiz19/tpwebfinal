@@ -44,7 +44,7 @@ export class AdminService {
   
   //PUT
   updateUser(id:number){
-    //let body = JSON.stringify(data);
+    
     return this.http.post('/server/admin/edit/'+ id,httpOptions);
   }
 

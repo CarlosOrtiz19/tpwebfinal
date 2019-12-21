@@ -51,41 +51,43 @@
             
         </div>
 
- <!-- liste produits -->
-        <div *ngIf="islisteProduits && listProduits" class="col-lg-10 align-self-start">
-            <h4>Produits</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Descripion</th>
-                        <th scope="col">Prix</th>
-                        <th scope="col">Vendeur</th>
-                        <th scope="col">Etat</th>
-                        
+ <!-- liste produits  alinear left-->
+ <div class="row">
+    <div *ngIf="islisteProduits && listProduits" class="col-lg-10 align-self-start">
+        <h4>Produits</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Descripion</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Vendeur</th>
+                    <th scope="col">Etat</th>
+                    
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of listProduits">
-                        <th scope="row">{{item.id}}</th>
-                        <td>{{item.nom}}</td>
-                        <td>{{item.description}}</td>
-                        <td>{{item.prix}}</td>
-                        <td>{{item.vendeur}}</td>
-                        <td>{{item.etat}}</td>
-                        <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
-
-
-                    </tr>
-
-                </tbody>
-            </table>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listProduits">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.nom}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.prix}}</td>
+                    <td>{{item.vendeur}}</td>
+                    <td>{{item.etat}}</td>
+                    <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
 
 
-            
-        </div>
+                </tr>
+
+            </tbody>
+        </table>
+        
+    </div>
+
+ </div>
+        
 <!-- liste clients -->
 <div *ngIf="islisteClients && listClients" class="col-lg-10">
     <h4>Clients</h4>

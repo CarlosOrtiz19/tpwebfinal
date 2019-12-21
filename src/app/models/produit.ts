@@ -9,5 +9,6 @@ export class Produit {
     image: string;
     vendeurId: number;
     clientId: number;
-    etat:boolean;
+    active:boolean;
+    vendu :boolean;
 }

@@ -10,17 +10,21 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './vendeur.component.html',
   styleUrls: ['./vendeur.component.css']
 })
-export class UserComponent implements OnInit {
+export class VendeurComponent implements OnInit {
 
   id: number;
-  seller: Vendeur;
+  seller: any;
   listeUsers: any = [];
+
 
   constructor(private serService: VendeurService, private router: Router, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id']; 
     this.getListeUsers();
+
+   
+
   }
 
   getListeUsers(){
@@ -42,7 +46,7 @@ export class UserComponent implements OnInit {
 
 editUser(){
   return this.serService.updateItem(this.id, this.seller).subscribe(
-    response => { this.router.navigate(['/sellers']);}
+    response => { this.router.navigate(['/sellers'])}
   );
 
 }
