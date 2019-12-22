@@ -11,7 +11,7 @@
                             <h5 class="card-title">{{item.nom}}</h5>
                             <p class="card-text">{{item.description}}</p>
                             <p class="card-text">{{item.prix}} $CAD</p>
-                            <a href="#" class="btn btn-primary">acheter</a>
+                            <button type="button" class="btn btn-info mr-3" (click)="produitVendu(item.id)">Acheter</button>
                         </div>
                     </div>
                 </div>
@@ -19,5 +19,7 @@
             </div>
               
             </div>
+
+            
 
 

@@ -24,4 +24,11 @@ export class ListProductsComponent implements OnInit {
     )
   }
 
+  produitVendu(id){
+    return this.productService.updateVendu(id)
+    .subscribe(data => this.getlisteProduits(), error => console.log(error));
+  }
+
+
+
 }

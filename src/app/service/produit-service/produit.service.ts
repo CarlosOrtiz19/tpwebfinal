@@ -51,4 +51,9 @@ export class ProductService {
     return this.http.post('/server/produits/edit/'+ id,httpOptions);
   }
 
+  updateVendu(id:number){
+    console.log(id)
+    return this.http.post('/server/produits/vendu/'+ id,httpOptions);
+  }
+
 }

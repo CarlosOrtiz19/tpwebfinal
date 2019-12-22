@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { VendeurComponent } from '../vendeur/vendeur.component';
 import { Vendeur } from 'src/app/models/vendeur';
 import { VendeurService } from 'src/app/service/vendeur-service/vendeur.service';
 import { Router } from '@angular/router';
