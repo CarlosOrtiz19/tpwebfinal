@@ -1,5 +1,5 @@
 <div class="row">
-    <div  class="col-lg-10 align-self-start">
+    <div class="col-lg-10 align-self-start">
         <h4>Produits</h4>
         <table class="table">
             <thead>
@@ -8,22 +8,18 @@
                     <th scope="col">Nom</th>
                     <th scope="col">Descripion</th>
                     <th scope="col">Prix</th>
-                    
                 </tr>
             </thead>
-            <tbody  *ngFor="let item of listeProduits">
-              
+            <tbody *ngFor="let item of listeProduits">
                 <ng-template [ngIf]="item.vendu">
-                <tr>
-                    <th scope="row">{{item.id}}</th>
-                    <td>{{item.nom}}</td>
-                    <td>{{item.description}}</td>
-                    <td>{{item.prix}}</td>
-                   
-                    <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
-                </tr>
-
-            </ng-template>
+                    <tr>
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.nom}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.prix}}</td>
+                        <button type="button" class="btn btn-info mr-3" (click)="retourner(item.id)">retourner produit à la liste</button>
+                    </tr>
+                </ng-template>
                
             </tbody>
         </table>

@@ -106,9 +106,6 @@ eliminerVendeur(){
 this.deletePVendeur();
 this.deleteUser();
 this.gotoRoute();
-
- console.log("elimine")
-  
 }
 
 deletePVendeur(){

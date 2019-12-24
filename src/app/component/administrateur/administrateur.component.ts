@@ -25,7 +25,6 @@ export class AdministrateurComponent implements OnInit {
 
   vendeur: Vendeur;
 
-
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private adminService: AdminService,
     private vendeurService: VendeurService, private clientService:ClientService) { }
 
@@ -85,9 +84,6 @@ export class AdministrateurComponent implements OnInit {
         () => console.log('liste clients apres supression')
     });
   }
-
-
-
 
   afficherVendeurs() {
     this.isListeVendeurs = true;
