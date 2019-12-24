@@ -7,6 +7,7 @@ import { EditSellerComponent } from './component/edit-seller/edit-seller.compone
 import { ListProductsComponent } from './component/list-products/list-products.component';
 import { AdministrateurComponent } from './component/administrateur/administrateur.component';
 import { ClientComponent } from './component/client/client.component';
+import { LoginComponent } from './component/fake-login/fake-login.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'admin/vendeurs', component: AdministrateurComponent },
   {path:'admin/produits', component: AdministrateurComponent },
   {path:'client/produits', component: ClientComponent },
+  {path:'login', component: LoginComponent },
 
 
   {path:'admin/clients', component: AdministrateurComponent }

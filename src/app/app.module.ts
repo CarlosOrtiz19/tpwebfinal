@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditSellerComponent } from './component/edit-seller/edit-seller.component';
 import { ListProductsComponent } from './component/list-products/list-products.component';
 import { AdministrateurComponent } from './component/administrateur/administrateur.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/fake-login/fake-login.component';
 import { ClientComponent } from './component/client/client.component';
 
 

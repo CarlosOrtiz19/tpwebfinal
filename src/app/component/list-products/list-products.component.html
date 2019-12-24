@@ -11,7 +11,16 @@
                             <h5 class="card-title">{{item.nom}}</h5>
                             <p class="card-text">{{item.description}}</p>
                             <p class="card-text">{{item.prix}} $CAD</p>
-                            <button type="button" class="btn btn-info mr-3" (click)="produitVendu(item.id)">Acheter</button>
+                            <div *ngIf="!item.vendu">
+                                <button type="button" class="btn btn-info mr-3" (click)="produitVendu(item.id)">Acheter</button>
+                            </div>
+                            
+                            <div *ngIf="item.vendu" class="m-3">
+                                <div class="alert alert-success" role="alert">
+                                    Produit ajoute à liste clients
+                            </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>

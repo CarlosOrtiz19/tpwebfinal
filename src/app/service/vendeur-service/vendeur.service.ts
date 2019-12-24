@@ -22,6 +22,10 @@ export class VendeurService {
     return this.http.get('/server/vendeurs/'+id);
   }
 
+  getVendeurByEmailAndPassword(email:string, password:string){
+    return this.http.get('/server/vendeurs/'+email+"/and/"+password);
+  }
+
   deleteUser (id){
     return this.http.delete('/server/vendeurs/'+id);
   }

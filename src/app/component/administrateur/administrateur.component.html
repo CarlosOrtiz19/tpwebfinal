@@ -1,16 +1,13 @@
-
-
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2">
             <nav class="nav flex-column">
-             <button type="button" class="btn btn-light mt-3"(click)="afficherVendeurs()">Afficher Vendeurs </button>
-             <button type="button" class="btn btn-light mt-3"(click)="afficherClients()">Afficher Clients </button>
-             <button type="button" class="btn btn-light mt-3"(click)="afficherProduits()">Afficher tous les produits </button>
-             <button type="button" class="btn btn-light mt-3"(click)="afficherTout()">Tout afficher </button>
+                <button type="button" class="btn btn-light mt-3" (click)="afficherVendeurs()">Afficher Vendeurs
+                </button>
+                <button type="button" class="btn btn-light mt-3" (click)="afficherClients()">Afficher Clients </button>
+                <button type="button" class="btn btn-light mt-3" (click)="afficherProduits()">Afficher tous les produits
+                </button>
+                <button type="button" class="btn btn-light mt-3" (click)="afficherTout()">Tout afficher </button>
             </nav>
         </div>
         <div *ngIf="isListeVendeurs && listeVendeurs" class="col-lg-10">
@@ -36,98 +33,73 @@
                         <td>{{item.telephone}}</td>
                         <td>{{item.etat}}</td>
 
-                        <button type="button" class="btn btn-info mr-3" [routerLink]="['/edit',item.id]">Editer</button>
                         <button type="button" class="btn btn-info mr-3"
                             (click)="bloquerVendeur(item.id)">Bloquer/débloquer</button>
                         <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- liste produits  alinear left-->
+        <div class="row">
+            <div *ngIf="islisteProduits && listProduits" class="col-lg-10 align-self-start">
+                <h4>Produits</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Descripion</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Vendeur</th>
+                            <th scope="col">Etat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of listProduits">
+                            <th scope="row">{{item.id}}</th>
+                            <td>{{item.nom}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.prix}}</td>
+                            <td>{{item.vendeur}}</td>
+                            <td>{{item.etat}}</td>
+                            <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
+        <!-- liste clients -->
+        <div *ngIf="islisteClients && listClients" class="col-lg-10">
+            <h4>Clients</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Active</th>
 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listClients">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.nom}}</td>
+                        <td>{{item.prenom}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.telephone}}</td>
+                        <td>{{item.etat}}</td>
+
+                    
+                        <button type="button" class="btn btn-info mr-3" (click)="deleteclient(item)">Effacer</button>
                     </tr>
 
                 </tbody>
             </table>
-
-
-            
         </div>
-
- <!-- liste produits  alinear left-->
- <div class="row">
-    <div *ngIf="islisteProduits && listProduits" class="col-lg-10 align-self-start">
-        <h4>Produits</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Descripion</th>
-                    <th scope="col">Prix</th>
-                    <th scope="col">Vendeur</th>
-                    <th scope="col">Etat</th>
-                    
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of listProduits">
-                    <th scope="row">{{item.id}}</th>
-                    <td>{{item.nom}}</td>
-                    <td>{{item.description}}</td>
-                    <td>{{item.prix}}</td>
-                    <td>{{item.vendeur}}</td>
-                    <td>{{item.etat}}</td>
-                    <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
-
-
-                </tr>
-
-            </tbody>
-        </table>
-        
-    </div>
-
- </div>
-        
-<!-- liste clients -->
-<div *ngIf="islisteClients && listClients" class="col-lg-10">
-    <h4>Clients</h4>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">id</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prenom</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telephone</th>
-                <th scope="col">Active</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of listClients">
-                <th scope="row">{{item.id}}</th>
-                <td>{{item.nom}}</td>
-                <td>{{item.prenom}}</td>
-                <td>{{item.email}}</td>
-                <td>{{item.telephone}}</td>
-                <td>{{item.etat}}</td>
-
-                <button type="button" class="btn btn-info mr-3" [routerLink]="['/edit',item.id]">Editer</button>
-                <button type="button" class="btn btn-info mr-3"
-                    (click)="bloquerVendeur(item.id)">Bloquer/débloquer</button>
-                <button type="button" class="btn btn-info mr-3" (click)="deleteUser(item)">Effacer</button>
-
-
-            </tr>
-
-        </tbody>
-    </table>
-
-
-    
-</div>
-
-
-        
     </div>
 </div>
