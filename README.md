@@ -28,10 +28,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ```mermaid
 flowchart LR
-    C[Client] --> |Login| A[Auth-Service] T[Token-Service]
+    C[Client] -->|Login| A[Auth-Service]
+    A -->|Requests Token| T[Token-Service]
+
     A -->|JWT| G[API Gateway]
     G -->|JWT Validation & RateLimit| T[Token-Service]
     G -->|Risk Evaluation| R[Risk-Service]
-
-    A --> T
 ```
